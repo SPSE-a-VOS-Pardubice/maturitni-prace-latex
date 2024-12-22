@@ -1,9 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{spseavospardubice}[]
+\LoadClass{article}
 
 \usepackage[a4paper,top=25mm,left=30mm,right=20mm,bottom=25mm]{geometry}
 
-% moderní font
+% moderní font family
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
@@ -17,64 +18,57 @@
 
 % zapnout hlavičky a patičky
 \pagestyle{plain}
-% nefunguje
-\pagenumbering{gobble}
-% pro zapnutí číslování od dané stránky na ni přidejte \pagenumbering{arabic}
+\pagenumbering{arabic}
 
 \usepackage[skip=6pt]{parskip}
 
 % proměnné
-\newcommand{\fullschool}[1]{\newcommand{\@fullschool}{#1}}
-\newcommand{\school}[1]{\newcommand{\@school}{#1}}
-\newcommand{\subject}[1]{\newcommand{\@subject}{#1}}
+\newcommand\fullschool[1]{\newcommand{\@fullschool}{#1}}
+\newcommand\school[1]{\newcommand{\@school}{#1}}
+\newcommand\subject[1]{\newcommand{\@subject}{#1}}
 
-% sdílené styly, poměr line spacing Word - LaTeX je ~ 1:1.125
-\newcommand{\regular} {\fontsize{12pt}{15pt}\selectfont}
-\newcommand{\medium} {\fontsize{14pt}{17pt}\selectfont}
-\newcommand{\large} {\fontsize{16pt}{19.5pt}\selectfont}
+% vlastní definice stylů z třídy article
+\renewcommand\normalsize {\fontsize{12bp}{15bp}\selectfont}
+\renewcommand\large {\fontsize{14bp}{17bp}\selectfont}
+\renewcommand\Large {\fontsize{16bp}{19.5bp}\selectfont}
 
-\newcommand{\bold} {\fontseries{b}\selectfont}
-\newcommand{\italics} {\fontshape{it}\selectfont}
-
-\renewcommand{\normalsize} {
-	\regular\selectfont
-}
-
-\newcommand{\titulnilist} {
+\newcommand\titulnilist {
 	\newpage
+	\thispagestyle{empty}
 	{\centering
-		{\medium \@fullschool}
+		{\large \@fullschool}
 		
 		\vspace{2cm}
 		
-		{\large\bold
+		{\Large\bfseries
 			\@school
 		}
 		
 		\vfill
 		
-		{\large\bold
+		{\Large\bfseries
 			\@subject
 		}
 		
 		\vspace{1cm}
 		
-		{\large\bold
+		{\Large\bfseries
 			\@title
 		}
 		
 		\vfill
 		
-		{\medium \@date \hfill \@author}
+		{\large \@date \hfill \@author}
 	}
 	\newpage
 }
 
-\newcommand{\prohlaseniautora} {
+\newcommand\prohlaseniautora {
 	\newpage
+	\thispagestyle{empty}
 	\null
 	\vfill
-	\enquote{\italics Prohlašuji, že jsem maturitní práci vypracoval(a) samostatně a použil(a) jsem literárních pramenů,  informací a obrázků, které cituji a uvádím v seznamu použité literatury a zdrojů informací a v seznamu použitých obrázků a neporušil jsem autorská práva.
+	\enquote{\itshape Prohlašuji, že jsem maturitní práci vypracoval(a) samostatně a použil(a) jsem literárních pramenů,  informací a obrázků, které cituji a uvádím v seznamu použité literatury a zdrojů informací a v seznamu použitých obrázků a neporušil jsem autorská práva.
 	
 	Souhlasím s umístěním kompletní maturitní práce nebo její části na školní internetové stránky a s použitím jejích ukázek pro výuku.}
 	
@@ -89,12 +83,12 @@
 	\newpage
 }
 
-\newcommand{\zadaniprace}[9] {
+\newcommand\zadaniprace[9] {
 	\newpage
-	\regular
-	{\centering\bold
+	\thispagestyle{empty}
+	{\centering\bfseries
 		
-		{\medium \@fullschool}
+		{\large \@fullschool}
 		
 		MATURITNÍ ZKOUŠKA – PROFILOVÁ ČÁST – MATURITNÍ PROJEKT
 		
@@ -103,31 +97,35 @@
 		\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
 	}
 	
+	\begingroup
+	\setlength{\tabcolsep}{0pt} % article dává tabulce před každý sloupec mezeru
 	\begin{tabular}{ l @{\hskip 5pt} l }
 	Obor: & #1 \\
 	Školní rok: & #2 \\
 	Třída: #3 & \\
-	\bold Jméno a příjmení žáka: & \bold #4 \\
-	\bold Téma maturitní práce: & \bold #5 \\
+	\bfseries Jméno a příjmení žáka: & \bfseries #4 \\
+	\bfseries Téma maturitní práce: & \bfseries #5 \\
 	Vedoucí maturitní práce: & #6 \\
 	Pracoviště vedoucího: & #7
 	\end{tabular}
+	\endgroup
 	
-	{\bold Zadání:}
+	{\bfseries Zadání:}
 	
 	#8
 	
-	{\bold Hlavní body administrace:}
+	{\bfseries Hlavní body administrace:}
 	
 	#9
 	
 	\newpage
 }
 
-\newcommand{\anotace}[3] {
+\newcommand\anotace[3] {
 	\newpage
-	{\italics
-		{\medium #1}
+	\thispagestyle{empty}
+	{\itshape
+		{\large #1}
 		
 		#2
 		
@@ -137,12 +135,30 @@
 	\newpage
 }
 
-\newcommand{\kapitola}[2] {
-	\newpage
-	
-	{\large\bold #1}
-	
-	#2
-	
-	\newpage
+\newcommand\obsah {
+	\tableofcontents
+	\thispagestyle{empty}
 }
+
+\newcommand\sekce {
+	\newpage
+	\@startsection {section}{1}{\z@}
+	{20bp}
+	{20bp}
+	{\normalfont\Large\bfseries}
+}
+
+\newcommand\podsekce {
+	\@startsection {subsection}{1}{\z@}
+	{30bp}
+	{15bp}
+	{\normalfont\Large\bfseries}
+}
+
+\newcommand\podpodsekce {
+	\@startsection {subsubsection}{1}{\z@}
+	{30bp}
+	{15bp}
+	{\normalfont\Large\bfseries}
+}
+
