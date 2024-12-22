@@ -2,12 +2,6 @@
 
 Dle [specifikace uvedené na stránkách školy](https://web.archive.org/web/20241007091329/https://www.spse.cz/download/zak_ss/Maturita/MP_Formalni_stranka_dokumentace.pdf).
 
-## Ukázky stran
-
-![titulní strana](readme/titulnilist.jpg)
-![prohlášení autora](readme/prohlaseniautora.jpg)
-![zadání práce](readme/zadaniprace.jpg)
-
 ## Příklad
 
 ```latex
@@ -84,3 +78,9 @@ Adresa: \url{https://poi-importer.github.io}
 	\item Phasellus dapibus sem
 \end{itemize}
 ```
+
+## Ukázky stran
+
+![titulní strana](readme/titulnilist.jpg)
+![prohlášení autora](readme/prohlaseniautora.jpg)
+![zadání práce](readme/zadaniprace.jpg)
