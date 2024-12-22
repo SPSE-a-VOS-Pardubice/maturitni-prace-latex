@@ -40,21 +40,15 @@
 		
 		\vspace{2cm}
 		
-		{\Large\bfseries
-			\@school
-		}
+		{\Large\bfseries \@school}
 		
 		\vfill
 		
-		{\Large\bfseries
-			\@subject
-		}
+		{\Large\bfseries \@subject}
 		
 		\vspace{1cm}
 		
-		{\Large\bfseries
-			\@title
-		}
+		{\Large\bfseries \@title}
 		
 		\vfill
 		
@@ -68,17 +62,18 @@
 	\thispagestyle{empty}
 	\null
 	\vfill
-	\enquote{\itshape Prohlašuji, že jsem maturitní práci vypracoval(a) samostatně a použil(a) jsem literárních pramenů,  informací a obrázků, které cituji a uvádím v seznamu použité literatury a zdrojů informací a v seznamu použitých obrázků a neporušil jsem autorská práva.
+	\enquote {\itshape
+		Prohlašuji, že jsem maturitní práci vypracoval(a) samostatně a použil(a) jsem literárních pramenů,  informací a obrázků, které cituji a uvádím v seznamu použité literatury a zdrojů informací a v seznamu použitých obrázků a neporušil jsem autorská práva.
 	
-	Souhlasím s umístěním kompletní maturitní práce nebo její části na školní internetové stránky a s použitím jejích ukázek pro výuku.}
+		Souhlasím s umístěním kompletní maturitní práce nebo její části na školní internetové stránky a s použitím jejích ukázek pro výuku.
+	}
 	
 	\vspace{1cm}
 	
 	\noindent
 	V Pardubicích dne ...........................
 	\hfill
-	podpis
-	................................................
+	podpis ................................................
 	
 	\newpage
 }
