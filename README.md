@@ -15,6 +15,7 @@ Dle [specifikace uvedené na stránkách školy](https://web.archive.org/web/202
 
 \usepackage{xurl} % balíček pro lepší formátování URL pomocí příkazu \url{...}
 
+% nastavení proměnných na titulní list a další vzorové strany
 \fullschool{Střední průmyslová škola elektrotechnická a Vyšší odborná škola Pardubice}
 \school{Střední průmyslová škola elektrotechnická}
 \subject{Maturitní práce - program}
