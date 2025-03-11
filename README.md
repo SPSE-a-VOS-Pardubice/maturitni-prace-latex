@@ -69,6 +69,11 @@ Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
 
 Adresa: \url{https://poi-importer.github.io}
 
+\obrazek
+	{img/graphhopper.png}
+	{analyza1}
+	{Graphhopper: Dokumentace, algoritmus pro hledání trasy}
+
 \podpodsekce{Kladné stránky}
 
 % bodovaný seznam
@@ -77,6 +82,8 @@ Adresa: \url{https://poi-importer.github.io}
 	\item Mauris congue arcu
 	\item Phasellus dapibus sem
 \end{itemize}
+
+\seznamObrazku
 ```
 
 ## Ukázky stran
