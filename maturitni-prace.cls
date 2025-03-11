@@ -157,3 +157,18 @@
 	{\normalfont\Large\bfseries}
 }
 
+\newcommand\obrazek[4] {
+	
+	\begin{figure} [h]
+		\includegraphics[width=\linewidth]{#1}
+		\caption{#3}
+		\label{fig:#2}
+	\end{figure}
+}
+
+\newcommand\seznamObrazku {
+	\newpage
+	\listoffigures
+	\thispagestyle{empty}
+}
+
