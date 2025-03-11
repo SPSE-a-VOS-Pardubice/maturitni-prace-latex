@@ -5,7 +5,7 @@
 \usepackage[a4paper,top=25mm,left=30mm,right=20mm,bottom=25mm]{geometry}
 
 % moderní font family
-\usepackage[T1]{fontenc}
+\usepackage{fontenc}
 \usepackage{lmodern}
 
 \usepackage[czech]{babel}
@@ -21,6 +21,15 @@
 \pagenumbering{arabic}
 
 \usepackage[skip=6pt]{parskip}
+
+% obrázky
+\usepackage{graphicx}
+
+%odkaz na webovku
+\usepackage{hyperref}
+
+%todo poznámky
+\usepackage{todonotes}
 
 % proměnné
 \newcommand\fullschool[1]{\newcommand{\@fullschool}{#1}}
